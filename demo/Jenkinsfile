@@ -4,6 +4,11 @@ pipeline {
 
     stages {
 
+		stage ('Checkout') {
+			steps {
+				checkout scm
+			}
+		}
         stage ('Build') {
             steps {
                 withMaven(maven: 'maven_3_3_9') {
